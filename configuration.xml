@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!-- The COPYRIGHT file at the top level of this repository contains the full
+     copyright notices and license terms. -->
+<tryton>
+    <data>
+        <record model="ir.ui.view" id="party_configuration_view_form">
+            <field name="model">party.configuration</field>
+            <field name="inherit" ref="party.party_configuration_view_form"/>
+            <field name="name">configuration_form</field>
+        </record>
+        <record model="ir.property" id="property_party_sequence">
+            <field name="field"
+                search="[('model.model', '=', 'party.configuration'), ('name', '=', 'partner_sequence')]"/>
+            <field name="value" eval="'ir.sequence,' + str(ref('sequence_party_partner'))"/>
+        </record>
+    </data>
+</tryton>
