@@ -67,7 +67,7 @@ class Party:
         codes = []
         if self.partner and self.partner_code:
             codes.append('[' + self.partner_code + ']')
-            return ''.join(codes) + self.name
+            return ''.join(codes) + name
         return name
 
     @classmethod
