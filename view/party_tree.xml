@@ -2,7 +2,8 @@
 <!-- The COPYRIGHT file at the top level of this repository contains the full
      copyright notices and license terms. -->
 <data>
-    <xpath expr="/tree/field[@name='name']" position="after">
+    <xpath expr="/tree/field[@name='code']" position="after">
         <field name="partner" tree_invisible="1"/>
+        <field name="partner_code"/>
     </xpath>
 </data>
