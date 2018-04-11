@@ -49,7 +49,7 @@ class Party:
             values = values.copy()
             if values.get('partner') == True:
                 for party in parties:
-                    if party.partner_code == '':
+                    if party.partner_code is None or party.partner_code == '':
                         config = Configuration(1)
                         values['partner_code'] = Sequence.get_id(config.partner_sequence.id)
             args.extend((parties, values))
