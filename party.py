@@ -21,11 +21,22 @@ class Party:
 
     partner = fields.Boolean('Partner', states=_STATES,
         depends=DEPENDS + ['partner', 'partner_code'])
-    partner_code = fields.Char('Partner code', select=True,
+    partner_code = fields.Char('Partner code', select=True, required=False,
         states={
             'readonly': True,
             'required': Eval('partner', False),
-            }, depends=['partner'])
+            }, depends=['partner_code_readonly', 'partner'])
+    partner_code_readonly = fields.Function(fields.Boolean('Code Readonly'),
+        'get_partner_code_readonly')
+
+    def get_partner_code_readonly(self, name):
+        return True
+
+    @staticmethod
+    def default_code_readonly():
+        Configuration = Pool().get('party.configuration')
+        config = Configuration(1)
+        return bool(config.partner_sequence)
 
     @classmethod
     def create(cls, vlist):
