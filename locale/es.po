@@ -1,3 +1,27 @@
 #
 msgid ""
 msgstr "Content-Type: text/plain; charset=utf-8\n"
+
+msgctxt "field:party.configuration,partner_sequence:"
+msgid "Partner sequence"
+msgstr "Secuencia de asociados"
+
+msgctxt "field:party.party,partner:"
+msgid "Partner"
+msgstr "Asociado"
+
+msgctxt "field:party.party,partner_code:"
+msgid "Partner code"
+msgstr "Código de asociado"
+
+msgctxt "field:party.party,partner_code_readonly:"
+msgid "Code Readonly"
+msgstr "Código sólo lectura"
+
+msgctxt "model:ir.sequence,name:sequence_party_partner"
+msgid "Partner sequence"
+msgstr "Secuencia de asociados"
+
+msgctxt "view:party.party:"
+msgid "Partner"
+msgstr "Asociado"
